@@ -1,0 +1,4 @@
+---
+# handlers file for check_mk-agent
+- name: restart xinetd
+  service: name=xinetd state=restarted enabled=yes

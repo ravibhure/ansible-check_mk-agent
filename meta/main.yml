@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Ravi Bhure
+  description:  Install Check_MK Monitoring Agent
+  license: GPL
+  min_ansible_version: 1.4
+
+  platforms:
+  - name: EL
+    versions:
+    - all
+  - name: CentOS
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+
+  categories:
+  - monitoring
+  - system
+
+dependencies: []

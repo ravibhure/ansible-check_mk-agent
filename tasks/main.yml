@@ -1,0 +1,26 @@
+---
+# tasks file for check_mk-agent
+- name: debug
+  action: debug msg=":=D"
+  tags: check-mk_agent
+
+# This play sets up the check_mk agent
+- name: -> Download Check_mk rpm
+  action: command wget http://mathias-kettner.com/download/check_mk-agent-{{ check_mk_version }}.noarch.rpm -O /opt/check_mk-agent-{{ check_mk_version }}.noarch.rpm creates=/opt/check_mk-agent-{{ check_mk_version }}.noarch.rpm
+  tags:
+  - get_check-mk_rpm
+  - check-mk_agent
+
+- name: -> Install xinetd packages
+  action: yum pkg=xinetd state=installed
+  tags:
+  - install_xinetd
+  - check-mk_agent
+
+- name: -> Install check_mk-agent packages
+  action: command rpm -ih /opt/check_mk-agent-{{ check_mk_version }}.noarch.rpm creates=/usr/bin/check_mk_agent
+  notify: restart xinetd
+  tags:
+  - install_check-mk_rpm
+  - check-mk_agent
+
