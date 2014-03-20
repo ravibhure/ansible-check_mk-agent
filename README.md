@@ -6,7 +6,7 @@ Installs the Check_MK Monitoring Agent
 Requirements
 ------------
 
-Tested with Ansible 1.4 on CentOS and RHEL
+Tested with Ansible 1.4 on CentOS, RHEL and FEDORA
 
 Role Variables
 --------------
@@ -20,7 +20,7 @@ Check_MK agent rpm version could be change, so it would good to refer to 'http:/
 Usages
 ------
 
-    ansible-galaxy install ravibhure.ansible-check_mk-agent
+    ansible-galaxy install ravibhure.check_mk-agent
 
 Also check the [Ansible Galaxy](https://galaxy.ansibleworks.com/intro) about page.
 
